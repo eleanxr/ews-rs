@@ -985,6 +985,7 @@ pub enum RealItem {
     MeetingRequest(Message),
     MeetingResponse(Message),
     MeetingCancellation(Message),
+    CalendarItem(Message),
 }
 
 impl RealItem {
@@ -995,7 +996,8 @@ impl RealItem {
             | RealItem::MeetingMessage(message)
             | RealItem::MeetingRequest(message)
             | RealItem::MeetingResponse(message)
-            | RealItem::MeetingCancellation(message) => message,
+            | RealItem::MeetingCancellation(message)
+            | RealItem::CalendarItem(message) => message,
         }
     }
 
@@ -1006,7 +1008,8 @@ impl RealItem {
             | RealItem::MeetingMessage(message)
             | RealItem::MeetingRequest(message)
             | RealItem::MeetingResponse(message)
-            | RealItem::MeetingCancellation(message) => message,
+            | RealItem::MeetingCancellation(message)
+            | RealItem::CalendarItem(message) => message,
         }
     }
 }
